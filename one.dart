@@ -59,10 +59,11 @@ void printCost(){
 void printStr() {
   List<String> strList = ["Pasta | 40.5","Pizza | 700", "Macroni | 67.5"];
   
-  strList.map((e) {
+  List<String> myAns = strList.map((e) {
     String name = e.split(" | ")[0].trim();
     double price = double.parse(e.split(" | ")[1].trim());
     double discountedPrice = price * 0.8;
-    print("$name is of cost $price and the discounted cost is $discountedPrice.");
-  });
+    return("$name is of cost $price and the discounted cost is $discountedPrice.");
+  }).toList();
+  print(myAns);
 }
