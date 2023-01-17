@@ -22,6 +22,8 @@ void main() {
   print(ans);
   printCost();
   printStr();
+  List<String> windowScreens=["zoom","music","chrome","notes"];
+  pullScreenToFront(windowScreens,2);
 }
 void printCost(){
   String foodItem="Paneer | 300.5";
@@ -67,3 +69,21 @@ void printStr() {
   }).toList();
   print(myAns);
 }
+void swap(String a, String b) {
+  String temp = a;
+  a = b;
+  b = temp;
+}
+void pullScreenToFront(List<String> winScreen,int index){
+  int count=0;
+  for(int i=0;i<winScreen.length;i++){
+    if(winScreen[i]!=winScreen[index]){
+      swap(winScreen[index],winScreen[count]);
+      count++;
+    }
+  }
+  for(int i=0;i<winScreen.length;i++){
+    print(winScreen[i]);
+  }
+}
+
